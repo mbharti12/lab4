@@ -52,15 +52,15 @@ std::string Student::getFullName() const {
 std::string Student::toString() const { 
   // e.g. [12345,Smith,Malory Logan]
   std::ostringstream oss;
-  //cout << "nonmononno" << endl;
-  //ISSUE IS WITH BELOW LINE!!
-  //cout << "[" << this->getPerm() << "," << this->getLastName() << "," << this->getFirstAndMiddleNames() << "]" << endl;
-  //cout << "hihihiih" << endl;
+  // cout << "nonmononno" << endl;
+  // //ISSUE IS WITH BELOW LINE!!
+  // cout << "[" << this->getPerm() << "," << this->getLastName() << "," << this->getFirstAndMiddleNames() << "]" << endl;
+  // cout << "hihihiih" << endl;
   oss << "[" 
       << this->getPerm() << ","
       << this->getLastName() << ","
       << this->getFirstAndMiddleNames() << "]";
-  
+
   return oss.str();
 } 
 

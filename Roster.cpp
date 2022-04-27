@@ -78,17 +78,20 @@ int Roster::getNumStudents() const {
 
 Student Roster::getStudentAt(int index) const { 
   //MOST LIKELY NEED TO DEREFERENCE (MAY NOT THO FOR SOME REASON)
-  return *students[index]; 
+  return *(students[index]); 
 }
 
 std::string Roster::toString() const {
   std::string result = "{\n";
-  
+  //Student s;
+
   for (int i = 0; i < numStudents; i++){
     //cout << "index: " << i << endl;
     //cout << (*students[i]).toString() << endl;
     //THE ISSUE IS WITH the student class toString() function
-    result+=(students[i]->toString());
+    //s = getStudentAt(i);
+    result+=(getStudentAt(i).toString());
+    // result+=(students[i]->toString());
     //cout << "after" << endl;
     if (i != numStudents - 1){
       result+=",";
@@ -121,11 +124,10 @@ void Roster::sortByPerm() {
   //   students[i] = tempStudent;
   // }
 
-  for (int i = numStudents - 1; i >= 0; i--){
+  for (int i = numStudents - 1; i > 0; i--){
     //cout << "index: " << i << endl;
     sortByPermHelper(i);
   }
-  //cout << "end of sorting function" << endl;
 }
 
 int Roster::indexOfMaxPermAmongFirstKStudents(int k) const {
@@ -138,7 +140,6 @@ int Roster::indexOfMaxPermAmongFirstKStudents(int k) const {
       maxPermIndex = i;
     }
   }
-  //cout << "maxPermIndex: " << maxPermIndex << endl;
   return maxPermIndex;
 }
 
@@ -152,7 +153,10 @@ void Roster::sortByPermHelper(int k) {
   students[im] = students[swapIndex];
   students[swapIndex] = tempStudent;
 
-  //cout << "end of helper" << endl;
+  // for (int i = 0; i < numStudents; i++){
+  //   cout << getStudentAt(i).toString() << " ";
+  // }
+  // cout << endl << endl;
   
 
   // now swap the pointers between index im and index k-1

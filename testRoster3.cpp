@@ -55,6 +55,7 @@ int main() {
     "}\n";
 
   //cout << "after string assignment" << endl;
+
   ASSERT_EQUALS(expectedToStringResult,r.toString());
   //cout << "after assert equals" << endl;
 
