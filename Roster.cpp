@@ -86,13 +86,7 @@ std::string Roster::toString() const {
   //Student s;
 
   for (int i = 0; i < numStudents; i++){
-    //cout << "index: " << i << endl;
-    //cout << (*students[i]).toString() << endl;
-    //THE ISSUE IS WITH the student class toString() function
-    //s = getStudentAt(i);
     result+=(getStudentAt(i).toString());
-    // result+=(students[i]->toString());
-    //cout << "after" << endl;
     if (i != numStudents - 1){
       result+=",";
     }
@@ -105,27 +99,7 @@ std::string Roster::toString() const {
 }
 
 void Roster::sortByPerm() {
-  // SELECTION SORT
-  // stub does nothing
-  // int maxVal;
-  // int maxValIndex;
-
-  // for (int i = 0; i < numStudents; i++){
-  //   maxVal = students[i]->perm;
-  //   for (int j = i; j < numStudents; j++){
-  //     if (students[j]->perm > maxVal){
-  //       maxVal = students[j]->perm;
-  //       maxValIndex = j;
-  //     }
-  //   }
-  //   //swap here
-  //   Student *tempStudent = students[maxValIndex];
-  //   students[maxValIndex] = students[i];
-  //   students[i] = tempStudent;
-  // }
-
   for (int i = numStudents - 1; i > 0; i--){
-    //cout << "index: " << i << endl;
     sortByPermHelper(i);
   }
 }
@@ -152,15 +126,4 @@ void Roster::sortByPermHelper(int k) {
   Student *tempStudent = students[im];
   students[im] = students[swapIndex];
   students[swapIndex] = tempStudent;
-
-  // for (int i = 0; i < numStudents; i++){
-  //   cout << getStudentAt(i).toString() << " ";
-  // }
-  // cout << endl << endl;
-  
-
-  // now swap the pointers between index im and index k-1
-
-  // THIS IS STILL A STUB !!!
-  
 }

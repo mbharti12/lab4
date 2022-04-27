@@ -44,7 +44,6 @@ int main() {
   // NOW, sort by perm number completely
 
   r.sortByPerm();
-  //cout << "ABCDEFG" << endl;
   std::string expectedToStringResult = std::string("") +
     "{\n" +
     "[1111111,Laux,Hunter],\n" +
@@ -54,10 +53,7 @@ int main() {
     "[8888888,Preble,Ethan Awesome]\n" +
     "}\n";
 
-  //cout << "after string assignment" << endl;
-
   ASSERT_EQUALS(expectedToStringResult,r.toString());
-  //cout << "after assert equals" << endl;
 
   return 0;
 }
